@@ -4,12 +4,17 @@ su persistencia multiplicativa, que es el número de veces que debes
 multiplicar los dígitos de num hasta llegar a un solo dígito.
 */
 
-function devolverPersistencia(numero){
-    if (numero<0){
-        return null;
+function devolverPersistencia(numero) {
+  if (numero < 0) {
+    return null;
+  }
+  numeroCopia = numero;
+  numeroMultiplicado = 1;
+  while (numeroCopia.length > 1) {
+    for (i = 0; i < numeroCopia.length; i++) {
+      numeroMultiplicado *= numeroCopia.chatAt(i);
     }
-
-    while (numero.length>1){
-        for (i=0; )
-    }
+    numeroCopia = numeroMultiplicado;
+  }
+  return numeroCopia;
 }
