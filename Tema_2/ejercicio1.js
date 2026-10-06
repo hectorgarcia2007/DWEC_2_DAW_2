@@ -5,17 +5,12 @@ entrada sólo consta de letras minúsculas y/o espacios.
 */
 
 function devolverVocales(palabra) {
-    let devolver = 0;
-    for (let i = 0; i < palabra.length; i++) {
-        switch (palabra.chatAt(i).toLowerCase()) {
-            case a:
-            case e:
-            case i:
-            case o:
-            case u:
-                devolver++;
-                break;
-        }
+  let stringVocales = "aeiou";
+  let devolver = 0;
+  for (let i = 0; i < palabra.length; i++) {
+    if (stringVocales.includes(palabra.chatAt(i).toLowerCase())) {
+      devolver++;
     }
-    return devolver;
+  }
+  return devolver;
 }
