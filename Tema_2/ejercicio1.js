@@ -5,10 +5,10 @@ entrada sólo consta de letras minúsculas y/o espacios.
 */
 
 function devolverVocales(palabra) {
-  let stringVocales = "aeiou";
+  let stringVocales = "aeiouáéíóú";
   let devolver = 0;
   for (let i = 0; i < palabra.length; i++) {
-    if (stringVocales.includes(palabra.chatAt(i).toLowerCase())) {
+    if (stringVocales.includes(palabra[i].toLowerCase())) {
       devolver++;
     }
   }

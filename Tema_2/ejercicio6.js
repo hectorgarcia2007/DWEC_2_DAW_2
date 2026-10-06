@@ -8,13 +8,16 @@ function devolverPersistencia(numero) {
   if (numero < 0) {
     return null;
   }
-  numeroCopia = numero;
-  numeroMultiplicado = 1;
-  while (numeroCopia.length > 1) {
-    for (i = 0; i < numeroCopia.length; i++) {
-      numeroMultiplicado *= numeroCopia.chatAt(i);
+  let numeroCopia = numero;
+  let numeroMultiplicado = 1;
+  let numeroVeces=0;
+  while (numeroCopia.toString().length > 1) {
+    numeroMultiplicado = 1;
+    for (i = 0; i < numeroCopia.toString().length; i++) {
+      numeroMultiplicado *= Number(numeroCopia.toString()[i]);
     }
     numeroCopia = numeroMultiplicado;
+    numeroVeces++;
   }
-  return numeroCopia;
+  return numeroVeces;
 }

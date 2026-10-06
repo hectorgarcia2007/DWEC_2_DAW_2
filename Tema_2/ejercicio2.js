@@ -6,7 +6,7 @@ válida, devuelve true, de lo contrario devuelve false.
 */
 
 function confirmarPin(pin) {
-    if (!(pin.length == 4 || pin.length == 6)) {
+    if (!(pin.toString().length == 6 || pin.toString().length == 4)) {
         return false;
     }
 

@@ -7,16 +7,16 @@ original de los elementos.
 
 function devolverArraySinRepetir(array) {
   let arrayDevolver = [];
-  for (let i = 0; i <= array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     if (comprobarEsPrimero(array, i)) {
-      arrayDevolver.push(array[l]);
+      arrayDevolver.push(array[i]);
     }
   }
   return arrayDevolver;
 }
 
 function comprobarEsPrimero(arrayComprobar, posicion) {
-  for (let j = posicion; j >= 0; j--) {
+  for (let j = posicion-1; j >= 0; j--) {
     if (arrayComprobar[posicion] == arrayComprobar[j]) {
       return false;
     }

@@ -9,7 +9,7 @@ respuestas, devuelve el menor índice correcto.
 
 function encontrarIndiceN(numeros) {
   for (let i = 0; i < numeros.length; i++) {
-    if (sacarSumaIzquierda(i) == sacarSumaIzquierda(i)) {
+    if (sacarSumaIzquierda(numeros,i) == sacarSumaDerecha(numeros,i)) {
       return i;
     }
   }
@@ -31,3 +31,6 @@ function sacarSumaDerecha(numeros, index) {
   }
   return devolver;
 }
+
+let resultado = encontrarIndiceN([10,-80,10,10,15,35]);
+console.log(resultado);

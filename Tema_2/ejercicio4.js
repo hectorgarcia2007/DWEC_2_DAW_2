@@ -4,20 +4,20 @@ un número impar de veces.
 */
 
 function devolverNumeros(numeros) {
-  if (typeof numeros != "Object") {
+  if (typeof numeros != "object") {
     return null;
   }
 
   let arraySinRepetir = [];
-  for (let i = 0; i <= numeros.lenght; i++) {
+  for (let i = 0; i < numeros.length; i++) {
     if (!arraySinRepetir.includes(numeros[i])) {
       arraySinRepetir.push(numeros[i]);
     }
   }
   let arrayCantidades = [];
-  for (let j = 0; j <= arraySinRepetir.length; j++) {
+  for (let j = 0; j < arraySinRepetir.length; j++) {
     let cantidadRepetidas = 0;
-    for (let k = 0; k <= arraySinRepetir.length; k++) {
+    for (let k = 0; k < numeros.length; k++) {
       if (arraySinRepetir[j] == numeros[k]) {
         cantidadRepetidas++;
       }
@@ -25,9 +25,10 @@ function devolverNumeros(numeros) {
     arrayCantidades.push(cantidadRepetidas);
   }
   let arrayAparecenImpares = [];
-  for (let l = 0; l <= arrayCantidades.length; l++) {
-    if (!arrayCantidades[l] % 2 == 0) {
+  for (let l = 0; l < arrayCantidades.length; l++) {
+    if (!(arrayCantidades[l] % 2 == 0)) {
       arrayAparecenImpares.push(arraySinRepetir[l]);
     }
   }
+  return arrayAparecenImpares;
 }
