@@ -11,13 +11,13 @@ function devolverDigitosOrdenados(numero) {
   }
 
   let arrayNumeros = [];
-  for (let i = 0; i < numero.length; i++) {
-    arrayNumeros.push(numero.chatAt(i));
+  for (let i = 0; i < numero.toString().length; i++) {
+    arrayNumeros.push(numero.toString()[i]);
   }
-  arrayNumeros.sort(b - a);
+  arrayNumeros.sort().reverse();;
   let numeroDevolver = 0;
   for (let j = 0; j < arrayNumeros.length; j++) {
-    numeroDevolver = numeroDevolver * 10 + arrayNumeros[j];
+    numeroDevolver = Number(numeroDevolver) * 10 + Number(arrayNumeros[j]);
   }
   return numeroDevolver;
 }

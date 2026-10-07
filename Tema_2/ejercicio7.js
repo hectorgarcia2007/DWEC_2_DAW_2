@@ -31,6 +31,3 @@ function sacarSumaDerecha(numeros, index) {
   }
   return devolver;
 }
-
-let resultado = encontrarIndiceN([10,-80,10,10,15,35]);
-console.log(resultado);

@@ -16,13 +16,17 @@ function sacarTeorema(numero) {
     }
   }
 
+  while (arrayNumeros.length<4){
+    arrayNumeros.push(0);
+  }
+
   return arrayNumeros;
 }
 
 function comprobarTeoremaCompletado(numero, array) {
   let numeroComprobar = 0;
   for (let j = 0; j < array.length; j++) {
-    numeroComprobar *= array[j];
+    numeroComprobar += array[j];
   }
   return numero == numeroComprobar;
 }

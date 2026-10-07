@@ -10,26 +10,26 @@ function numeroDeUnos(numero) {
     return null;
   }
 
-  let indexComa = numero.index(".");
+  let indexComa = numero.toString().indexOf(".");
 
   let numeroCopia = numero;
 
   if (indexComa >= 0) {
-    for (let i = 0; i < numero.length - indexComa; i++) {
+    for (let i = 0; i < numero.toString().length - indexComa - 1; i++) {
       numeroCopia *= 10;
     }
   }
 
-  let numeroCopiaBinario = numero;
+  let numeroCopiaBinario = numeroCopia;
   let numeroBinario = 0;
-  while (numeroCopiaBinario <= 1) {
-    numeroBinario = numeroBinario * 10 + (numeroCopiaBinario % 2);
-    numeroCopiaBinario /= 2;
-  }
+  do {
+    numeroBinario = numeroBinario * 10 + (Math.ceil(numeroCopiaBinario % 2));
+    numeroCopiaBinario = Math.floor(numeroCopiaBinario / 2);
+  } while (numeroCopiaBinario > 0)
 
   let numeroDevolver = 0;
-  for (let j = 0; j < numeroBinario.length; j++) {
-    if (numeroBinario.charAt[j] == 1) {
+  for (let j = 0; j < numeroBinario.toString().length; j++) {
+    if (numeroBinario.toString()[j] == 1) {
       numeroDevolver++;
     }
   }

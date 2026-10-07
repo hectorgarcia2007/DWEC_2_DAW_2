@@ -9,10 +9,11 @@ de la otra:
 function arrayDiff(arrayUno, arrayDos) {
   arrayDevolver = [];
 
-  for (let i = 0; i < arrayUno; i++) {
+  for (let i = 0; i < arrayUno.length; i++) {
     if (!arrayDos.includes(arrayUno[i])) {
       arrayDevolver.push(arrayUno[i]);
     }
   }
   return arrayDevolver;
 }
+
