@@ -5,12 +5,12 @@ multiplicar los dígitos de num hasta llegar a un solo dígito.
 */
 
 function devolverPersistencia(numero) {
-  if (numero < 0) {
+  if (comprobarCumpleRequisito(numero)) {
     return null;
   }
   let numeroCopia = numero; //Copia del numero hecha para no alterar el numero original.
   let numeroMultiplicado = 1; //Numero que se ira multiplicando para luego introducirlo en numeroCopia.
-  let numeroVeces=0; //Contador de las veces que se hizo la persistencia.
+  let numeroVeces = 0; //Contador de las veces que se hizo la persistencia.
   while (numeroCopia.toString().length > 1) {
     numeroMultiplicado = 1; //Reseteo del numero que se ira multiplicando.
     for (i = 0; i < numeroCopia.toString().length; i++) {
@@ -20,4 +20,14 @@ function devolverPersistencia(numero) {
     numeroVeces++;
   }
   return numeroVeces;
+}
+
+function comprobarCumpleRequisito(comprobar) {
+  if (typeof comprobar != "number") {
+    return true;
+  }
+  if (comprobar < 0) {
+    return true;
+  }
+  return false;
 }

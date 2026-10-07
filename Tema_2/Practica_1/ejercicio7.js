@@ -8,8 +8,12 @@ respuestas, devuelve el menor índice correcto.
 */
 
 function encontrarIndiceN(numeros) {
+  if (comprobarCumpleRequisito(numeros)) {
+    return null;
+  }
   for (let i = 0; i < numeros.length; i++) {
-    if (sacarSumaIzquierda(numeros,i) == sacarSumaDerecha(numeros,i)) { //Comprobacion de la suma de cada lado de la posicion del array.
+    if (sacarSumaIzquierda(numeros, i) == sacarSumaDerecha(numeros, i)) {
+      //Comprobacion de la suma de cada lado de la posicion del array.
       return i;
     }
   }
@@ -30,4 +34,17 @@ function sacarSumaDerecha(numeros, index) {
     devolver += numeros[k];
   }
   return devolver;
+}
+
+function comprobarCumpleRequisito(comprobar) {
+  if (typeof comprobar != "object") {
+    return true;
+  }
+
+  for (let i = 0; i < comprobar.length; i++) {
+    if (typeof comprobar[i] != "number") {
+      return true;
+    }
+  }
+  return false;
 }

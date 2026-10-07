@@ -4,13 +4,14 @@ un número impar de veces.
 */
 
 function devolverNumeros(numeros) {
-  if (typeof numeros != "object") {
+  if (comprobarCumpleRequisito(numeros)) {
     return null;
   }
 
   let arraySinRepetir = []; //Array de los numeros sin repetir.
   for (let i = 0; i < numeros.length; i++) {
-    if (!arraySinRepetir.includes(numeros[i])) { //Comprobacion de si cada apartado del array esta ya en el sin repetir.
+    if (!arraySinRepetir.includes(numeros[i])) {
+      //Comprobacion de si cada apartado del array esta ya en el sin repetir.
       arraySinRepetir.push(numeros[i]);
     }
   }
@@ -26,9 +27,23 @@ function devolverNumeros(numeros) {
   }
   let arrayAparecenImpares = []; //Array donde se almacenaran los que aparecieron de forma impar.
   for (let l = 0; l < arrayCantidades.length; l++) {
-    if (!(arrayCantidades[l] % 2 == 0)) { //Comprobando si la cantidad es impar o no.
+    if (!(arrayCantidades[l] % 2 == 0)) {
+      //Comprobando si la cantidad es impar o no.
       arrayAparecenImpares.push(arraySinRepetir[l]);
     }
   }
   return arrayAparecenImpares; //Se devuelve el array con los que aparecen de forma impar.
+}
+
+function comprobarCumpleRequisito(comprobar) {
+  if (typeof comprobar != "object") {
+    return true;
+  }
+
+  for (let i = 0; i < comprobar.length; i++) {
+    if (typeof comprobar[i] != "number") {
+      return true;
+    }
+  }
+  return false;
 }

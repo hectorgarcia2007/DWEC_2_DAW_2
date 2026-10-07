@@ -7,13 +7,23 @@ de la otra:
 */
 
 function arrayDiff(arrayUno, arrayDos) {
+  if (comprobarCumpleRequisito(arrayUno, arrayDos)) {
+    return null;
+  }
   arrayDevolver = []; //Array en el cual se devolvera el arrayUno sin añadir lo elementos del arrayDos.
 
   for (let i = 0; i < arrayUno.length; i++) {
-    if (!arrayDos.includes(arrayUno[i])) { //Comprobando si existe ese elemento de arrayUno en el Dos.
+    if (!arrayDos.includes(arrayUno[i])) {
+      //Comprobando si existe ese elemento de arrayUno en el Dos.
       arrayDevolver.push(arrayUno[i]);
     }
   }
   return arrayDevolver;
 }
 
+function comprobarCumpleRequisito(comprobar1, comprobar2) {
+  if (typeof comprobar1 != "object" && typeof comprobar2 != "object") {
+    return true;
+  }
+  return false;
+}

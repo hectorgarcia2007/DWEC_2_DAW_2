@@ -5,7 +5,7 @@ empate devuelve el número más pequeño.
 */
 
 function devolverRepeticiones(numeros) {
-  if (typeof numeros != "object") {
+  if (comprobarCumpleRequisito(numeros)) {
     return null;
   }
 
@@ -45,4 +45,17 @@ function devolverRepeticiones(numeros) {
   }
 
   return arraySinRepetir[indexMenor]; //Se devuelve el numero.
+}
+
+function comprobarCumpleRequisito(comprobar) {
+  if (typeof comprobar != "object") {
+    return true;
+  }
+
+  for (let i = 0; i < comprobar.length; i++) {
+    if (typeof comprobar[i] != "number") {
+      return true;
+    }
+  }
+  return false;
 }

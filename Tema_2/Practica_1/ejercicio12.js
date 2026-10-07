@@ -1,4 +1,14 @@
+/*
+Un triángulo de color se crea a partir de una fila de colores, cada uno de los
+cuales es rojo, verde o azul. Las filas sucesivas, cada una con un color
+menos que la anterior, se generan considerando los dos colores que se
+tocan en la fila anterior.
+*/
+
 function colorearTriangulo(texto) {
+  if (comprobarCumpleRequisito(texto)) {
+    return null;
+  }
   let textoCopia = texto; //Copia del texto para no alterar el original.
   let textoCopiaIntroduciendo = ""; //Texto que se ira preparando para luego introducirse en el textoCopia.
 
@@ -8,7 +18,9 @@ function colorearTriangulo(texto) {
       let num1 = 0; //Reseteo de los numeros que se sumaran para comprobar si poner R, G o B.
       let num2 = 0;
 
-      switch (textoCopia[i]) { //Conversion de la letra a numero para facilitar que letra sacar luego.
+      switch (
+        textoCopia[i] //Conversion de la letra a numero para facilitar que letra sacar luego.
+      ) {
         case "R":
           num1 = 1;
           break;
@@ -32,7 +44,9 @@ function colorearTriangulo(texto) {
           break;
       }
       let letraAnadir = ""; //Letra que luego se añadira al textoCopiaIntroducir.
-      switch (num1 + num2) { //Debido a que R y R es igual 1+1, 2 que seria el resultado, daria R, es la forma de sacar por medio de numeros que letra seria el conjunto de 2 letras.
+      switch (
+        num1 + num2 //Debido a que R y R es igual 1+1, 2 que seria el resultado, daria R, es la forma de sacar por medio de numeros que letra seria el conjunto de 2 letras.
+      ) {
         case 2:
           letraAnadir = "R";
           break;
@@ -54,4 +68,17 @@ function colorearTriangulo(texto) {
     textoCopia = textoCopiaIntroduciendo; //Se introduce al textoCopia el nuevo conjunto de letras.
   }
   return textoCopia;
+}
+
+function comprobarCumpleRequisito(comprobar) {
+  if (typeof comprobar != "string") {
+    return true;
+  }
+  let stringPermitido = "RGB";
+  for (let i = 0; i < comprobar.length; i++) {
+    if (!stringPermitido.includes(comprobar[i])) {
+      return true;
+    }
+  }
+  return false;
 }

@@ -6,7 +6,7 @@ mayor número posible.
 */
 
 function devolverDigitosOrdenados(numero) {
-  if (numero < 0) {
+  if (comprobarCumpleRequisito(numero)) {
     return null;
   }
 
@@ -20,4 +20,14 @@ function devolverDigitosOrdenados(numero) {
     numeroDevolver = Number(numeroDevolver) * 10 + Number(arrayNumeros[j]); //Introduciendo cada parte del array ordenado.
   }
   return numeroDevolver;
+}
+
+function comprobarCumpleRequisito(comprobar) {
+  if (typeof comprobar != "number") {
+    return true;
+  }
+  if (comprobar < 0) {
+    return true;
+  }
+  return false;
 }

@@ -6,9 +6,13 @@ original de los elementos.
 */
 
 function devolverArraySinRepetir(array) {
+  if (comprobarCumpleRequisito(array)) {
+    return null;
+  }
   let arrayDevolver = []; //Array donde se devolvera los elementos sin repetir
   for (let i = 0; i < array.length; i++) {
-    if (comprobarEsPrimero(array, i)) { //Llamada a funcion que comprobara si esa posicion del array ya aparecio o no.
+    if (comprobarEsPrimero(array, i)) {
+      //Llamada a funcion que comprobara si esa posicion del array ya aparecio o no.
       arrayDevolver.push(array[i]);
     }
   }
@@ -16,10 +20,24 @@ function devolverArraySinRepetir(array) {
 }
 
 function comprobarEsPrimero(arrayComprobar, posicion) {
-  for (let j = posicion-1; j >= 0; j--) { //Comprobando desde la posicion hacia atras para ver si ya estaba dicho elemento.
+  for (let j = posicion - 1; j >= 0; j--) {
+    //Comprobando desde la posicion hacia atras para ver si ya estaba dicho elemento.
     if (arrayComprobar[posicion] == arrayComprobar[j]) {
       return false;
     }
   }
   return true; //Retorna true en caso de no encontrar nada.
+}
+
+function comprobarCumpleRequisito(comprobar) {
+  if (typeof comprobar != "object") {
+    return true;
+  }
+
+  for (let i = 0; i < comprobar.length; i++) {
+    if (typeof comprobar[i] != "number" && typeof comprobar[i] != "string") {
+      return true;
+    }
+  }
+  return false;
 }
