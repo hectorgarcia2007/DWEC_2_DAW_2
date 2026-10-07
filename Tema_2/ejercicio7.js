@@ -9,15 +9,15 @@ respuestas, devuelve el menor índice correcto.
 
 function encontrarIndiceN(numeros) {
   for (let i = 0; i < numeros.length; i++) {
-    if (sacarSumaIzquierda(numeros,i) == sacarSumaDerecha(numeros,i)) {
+    if (sacarSumaIzquierda(numeros,i) == sacarSumaDerecha(numeros,i)) { //Comprobacion de la suma de cada lado de la posicion del array.
       return i;
     }
   }
-  return -1;
+  return -1; //En caso de que no se encuentre ningun lado igual, devuelve -1.
 }
 
 function sacarSumaIzquierda(numeros, index) {
-  let devolver = 0;
+  let devolver = 0; //Suma total que se devolvera.
   for (let j = index - 1; j >= 0; j--) {
     devolver += numeros[j];
   }
@@ -25,7 +25,7 @@ function sacarSumaIzquierda(numeros, index) {
 }
 
 function sacarSumaDerecha(numeros, index) {
-  let devolver = 0;
+  let devolver = 0; //Suma total que se devolvera.
   for (let k = index + 1; k < numeros.length; k++) {
     devolver += numeros[k];
   }

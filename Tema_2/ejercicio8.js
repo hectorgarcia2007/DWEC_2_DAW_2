@@ -7,10 +7,10 @@ de la otra:
 */
 
 function arrayDiff(arrayUno, arrayDos) {
-  arrayDevolver = [];
+  arrayDevolver = []; //Array en el cual se devolvera el arrayUno sin añadir lo elementos del arrayDos.
 
   for (let i = 0; i < arrayUno.length; i++) {
-    if (!arrayDos.includes(arrayUno[i])) {
+    if (!arrayDos.includes(arrayUno[i])) { //Comprobando si existe ese elemento de arrayUno en el Dos.
       arrayDevolver.push(arrayUno[i]);
     }
   }
