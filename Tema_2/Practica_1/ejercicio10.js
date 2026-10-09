@@ -40,6 +40,7 @@ function numeroDeUnos(numero) {
 
 function comprobarCumpleRequisito(comprobar) {
   if (typeof comprobar != "number") {
+    //Comprobar si es un numero.
     return true;
   }
   return false;

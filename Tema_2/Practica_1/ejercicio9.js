@@ -24,9 +24,11 @@ function devolverDigitosOrdenados(numero) {
 
 function comprobarCumpleRequisito(comprobar) {
   if (typeof comprobar != "number") {
+    //Comprobar si es un numero.
     return true;
   }
   if (comprobar < 0) {
+    //Comprobar si es un numero positivo.
     return true;
   }
   return false;

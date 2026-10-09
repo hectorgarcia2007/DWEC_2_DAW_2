@@ -24,9 +24,11 @@ function devolverPersistencia(numero) {
 
 function comprobarCumpleRequisito(comprobar) {
   if (typeof comprobar != "number") {
+    //Comprobar que sea un numero.
     return true;
   }
   if (comprobar < 0) {
+    //Comprobar que sea un numero positivo.
     return true;
   }
   return false;

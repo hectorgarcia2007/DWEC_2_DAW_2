@@ -72,10 +72,12 @@ function colorearTriangulo(texto) {
 
 function comprobarCumpleRequisito(comprobar) {
   if (typeof comprobar != "string") {
+    //Comprobar si es un string.
     return true;
   }
   let stringPermitido = "RGB";
   for (let i = 0; i < comprobar.length; i++) {
+    //Comprobar si todas las posiciones son R, G o B.
     if (!stringPermitido.includes(comprobar[i])) {
       return true;
     }

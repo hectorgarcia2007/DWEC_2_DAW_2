@@ -49,11 +49,13 @@ function devolverRepeticiones(numeros) {
 
 function comprobarCumpleRequisito(comprobar) {
   if (typeof comprobar != "object") {
+    //Comprueba si es un array.
     return true;
   }
 
   for (let i = 0; i < comprobar.length; i++) {
     if (typeof comprobar[i] != "number") {
+      //Comprueba que todas las posiciones sean numeros.
       return true;
     }
   }

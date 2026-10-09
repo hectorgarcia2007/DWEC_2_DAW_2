@@ -23,6 +23,7 @@ function arrayDiff(arrayUno, arrayDos) {
 
 function comprobarCumpleRequisito(comprobar1, comprobar2) {
   if (typeof comprobar1 != "object" && typeof comprobar2 != "object") {
+    //Comprueba si ambas variables es un array.
     return true;
   }
   return false;

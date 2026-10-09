@@ -31,11 +31,13 @@ function comprobarEsPrimero(arrayComprobar, posicion) {
 
 function comprobarCumpleRequisito(comprobar) {
   if (typeof comprobar != "object") {
+    //Comprueba si es un array.
     return true;
   }
 
   for (let i = 0; i < comprobar.length; i++) {
     if (typeof comprobar[i] != "number" && typeof comprobar[i] != "string") {
+      //Comprobar si los elementos del array son numeros o strings.
       return true;
     }
   }

@@ -6,9 +6,10 @@ válida, devuelve true, de lo contrario devuelve false.
 */
 
 function confirmarPin(pin) {
-    if (!(pin.toString().length == 6 || pin.toString().length == 4)) { //Comprobacion del tamaño
-        return false;
-    }
+  if (!(pin.toString().length == 6 || pin.toString().length == 4)) {
+    //Comprobacion del tamaño
+    return false;
+  }
 
-    return !Number.isNaN(Number(pin)); //Devuelve si todos son numeros o no.
+  return !Number.isNaN(Number(pin)); //Devuelve si todos son numeros o no.
 }
