@@ -16,7 +16,7 @@ function encontrarLognitud(cadena) {
 }
 
 function buscarLongitud(cadena, pos) {
-    for (let j = pos; j < cadena.length; j++) {
+    for (let j = pos+1; j < cadena.length; j++) {
         if (cadena[pos] == cadena[j]) {
             return j - pos;
         }

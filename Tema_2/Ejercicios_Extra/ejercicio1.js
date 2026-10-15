@@ -11,8 +11,8 @@ function encontrarTarget(numeros, target) {
     for (let i = 0; i < numeros.length; i++) {
         for (let j = i; j < numeros.length; j++) {
             if (numeros[i] + numeros[j] == target) {
-                devolerArray.push(i);
-                devolverArray.push(j);
+                devolverArray.push(numeros[i]);
+                devolverArray.push(numeros[j]);
                 return devolverArray;
             }
         }
