@@ -6,16 +6,16 @@ solución.
 */
 
 function encontrarTarget(numeros, target) {
-    let devolverArray = [];
+    let devolverArray = []; //Array del resultado
 
     for (let i = 0; i < numeros.length; i++) {
-        for (let j = i; j < numeros.length; j++) {
-            if (numeros[i] + numeros[j] == target) {
-                devolverArray.push(numeros[i]);
+        for (let j = i; j < numeros.length; j++) { //2 for para hacer 2 comprobacione de posiciones diferentes
+            if (numeros[i] + numeros[j] == target) {  //Se encuentra el target
+                devolverArray.push(numeros[i]); //Se añade al array
                 devolverArray.push(numeros[j]);
                 return devolverArray;
             }
         }
     }
-    return -1;
+    return -1; //En caso de no encontrar nada, devuelve -1
 }
