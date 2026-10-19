@@ -5,23 +5,23 @@ resultado como un nuevo arreglo.
 */
 
 function combinarIntervalos(array) {
-  let arrayOrdenado = array.sort((a, b) => a - b);
-  for (let i = 0; i < arrayOrdenado.length - 1; i++) {
-    if (hayIntervalo(arrayOrdenado[i], arrayOrdenado[i + 1])) {
-      arrayOrdenado[i] = arrayFusionado(arrayOrdenado[i], arrayOrdenado[i + 1]);
-      arrayOrdenado.splice(i + 1, 1);
+  let arrayCopia = array.toSorted(function(a, b){return a - b});
+  for (let i = 0; i < arrayCopia.length - 1; i++) {
+    if (hayIntervalo(arrayCopia[i], arrayCopia[i + 1])) {
+      arrayCopia[i] = arrayFusionado(arrayCopia[i], arrayCopia[i + 1]);
+      arrayCopia.splice(i+1, 1);
       i--;
       continue;
     } else {
       continue;
     }
   }
-  return arrayOrdenado;
+  return arrayCopia;
 }
 
 function hayIntervalo(arrayUno, arrayDos) {
-  arrayUno = arrayUno.sort((a, b) => a - b);
-  arrayDos = arrayDos.sort((a, b) => a - b);
+  arrayUno = arrayUno.toSorted();
+  arrayDos = arrayDos.toSorted();
 
   if (arrayDos[0] <= arrayUno[1]) {
     return true;
@@ -31,8 +31,8 @@ function hayIntervalo(arrayUno, arrayDos) {
 
 function arrayFusionado(arrayUno, arrayDos) {
   let arrayDevolver = [];
-  let minimo = Math.min(arrayUno, arrayDos);
-  let maximo = Math.max(arrayUno, arrayDos);
+  let minimo = Math.min(arrayUno[0],arrayUno[1],arrayDos[0], arrayDos[1]);
+  let maximo = Math.max(arrayUno[0],arrayUno[1],arrayDos[0], arrayDos[1]);
   arrayDevolver.push(minimo);
   arrayDevolver.push(maximo);
   return arrayDevolver;

@@ -26,6 +26,3 @@ function devolverTrios(numeros) {
   }
   return numerosDevolver;
 }
-
-let resultado = devolverTrios([-1, 0, 1, 2, -1, -4]);
-console.log(resultado);
