@@ -13,6 +13,7 @@ function esCasiEscalonado(numero) {
       }
       arrayNumeros.splice(i + 1, 1);
       contadorEliminados++;
+      i--;
     }
   }
   return true;
