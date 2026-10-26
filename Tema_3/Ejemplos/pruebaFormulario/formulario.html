@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="formulario.js" defer type="module"></script>
+    <link rel="stylesheet" href="formulario.css">
+  </head>
+  <body>
+    <header><h1>Mi primer formulario</h1></header>
+    <main>
+      <form action="" method="get">
+        <label for="idNombre">Introduce nombre: </label>
+        <input type="text" id="idNombre" autocomplete="given-name" />
+        <label for="idApellido">Introduce apellido: </label>
+        <input type="text" id="idApellido" autocomplete="family-name" />
+        <label for="idNacimiento">Introduce cumpleaños: </label>
+        <input type="date" id="idNacimiento" autocomplete="bday" />
+        <label for="idCalle">Introduce calle: </label>
+        <input type="text" id="idCalle" autocomplete="street-address" />
+        <label for="idCorreo">Introduce correo: </label>
+        <input type="text" id="idCorreo" autocomplete="email" />
+        <input type="reset" name="reset" value="Reset" />
+        <input type="submit" name="enviar" value="Enviar" />
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+body {
+  width: 50%;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
