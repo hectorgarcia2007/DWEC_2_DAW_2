@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Libreria Comercio</title>
     <script src="javaScript/libreriaComercio.js" defer type="module"></script>
+    <link rel="stylesheet" href="css/libreriaComercio.css">
   </head>
   <body>
     <a href="index.html"><p>Inicio.</p></a>
-    <form action="mostrarLibreria.html" method="get">
+    <form action="" method="get">
       <label for="idNombre">Nombre</label>
-      <input type="text" id="idNombre" autocomplete="given-name" />
+      <input class="flex" type="text" id="idNombre" autocomplete="given-name" />
       <label for="idPaginas">Paginas</label>
-      <input type="number" id="idPaginas" />
+      <input class="flex" type="number" id="idPaginas" />
       <input type="checkbox" id="idPrestado" name="prestado" />
       <label for="idPrestado">Prestado</label>
-      <input type="submit" name="enviar" value="Crear" />
+      <input class="flex" type="submit" name="enviar" value="Crear" />
     </form>
     <div id="resultado"></div>
   </body>

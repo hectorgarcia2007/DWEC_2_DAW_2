@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="script/cambioDivisa.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section id="formulario">
+        <form action="" method="get">
+          <label>Importe <input type="number" placeholder="20" id="importe"/> </label>
+          <label for="origen">Origen: </label>
+          <select id="origen" name="origen" id="pet-select">
+            <option value="">--Please choose an option--</option>
+            <option value="euro">euro</option>
+            <option value="dolar">dolar</option>
+            <option value="libra">libra</option>
+          </select>
+          <label for="destino">Destino: </label>
+          <select id="destino" name="destino" id="pet-select">
+            <option value="">--Please choose an option--</option>
+            <option value="euro">euro</option>
+            <option value="dolar">dolar</option>
+            <option value="libra">libra</option>
+          </select>
+          <input type="submit" value="cambiar" />
+        </form>
+      </section>
+      <section id="historico">
+        <h1>Historico</h1>
+        <ul id="idHistorico"></ul>
+      </section>
+    </main>
+  </body>
+</html>

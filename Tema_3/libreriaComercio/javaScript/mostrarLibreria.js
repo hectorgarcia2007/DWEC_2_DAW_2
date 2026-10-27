@@ -6,7 +6,7 @@ for (let index = 0; index < arrayAlmacenado.length; index++) {
   nuevoDiv.innerHTML = `<div class="tarjeta">
           <h3 class="tituloTarjeta">Nombre: ${objetoAlmacenado.nombre}</h3>
           <p>Paginas: ${objetoAlmacenado.paginas}</p>
-          <p>Prestado: ${objetoAlmacenado.prestado==="on"?"Si":"No"}</p>
+          <p>Prestado: ${objetoAlmacenado.prestado===true?"Si":"No"}</p>
         </div>`;
   almacen.appendChild(nuevoDiv);
 }
