@@ -1,0 +1,13 @@
+.tarjeta {
+    border: 1px solid black;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.tituloTarjeta {
+    border: 1px solid black;
+    background-color: lightblue;
+    margin: auto;
+}

@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Libreria Comercio</title>
-    <script src="libreriaComercio.js" defer type="module"></script>
+    <script src="javaScript/libreriaComercio.js" defer type="module"></script>
   </head>
   <body>
-    <a href="mostrarLibreria.html"><p>Ir a la otra pagina.</p></a>
-    <form action="" method="get">
+    <a href="index.html"><p>Inicio.</p></a>
+    <form action="mostrarLibreria.html" method="get">
       <label for="idNombre">Nombre</label>
       <input type="text" id="idNombre" autocomplete="given-name" />
       <label for="idPaginas">Paginas</label>
@@ -17,5 +17,6 @@
       <label for="idPrestado">Prestado</label>
       <input type="submit" name="enviar" value="Crear" />
     </form>
+    <div id="resultado"></div>
   </body>
 </html>
