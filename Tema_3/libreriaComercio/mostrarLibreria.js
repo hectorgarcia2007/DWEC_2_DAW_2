@@ -10,11 +10,3 @@ for (let index = 0; index < arrayAlmacenado.length; index++) {
         </div>`;
   almacen.appendChild(nuevoDiv);
 }
-/*
-<img src=${valueCard.img} alt=${valueCard.alt} />
-          <div class="card-content">
-            <h3>${valueCard.titulo}</h3>
-            <p>${valueCard.texto}</p>
-            <a href="#" class="btn">Leer más</a>
-          </div>
-*/
