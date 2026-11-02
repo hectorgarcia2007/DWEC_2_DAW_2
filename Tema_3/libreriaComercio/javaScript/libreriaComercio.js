@@ -1,5 +1,4 @@
-const collectionForms = document.getElementsByClassName("form");
-const form = collectionForms[0];
+const form = document.getElementById("formulario");
 
 form.addEventListener("submit", rellenarLibro);
 
