@@ -44,3 +44,5 @@ class DispositivoFactory {
     }
   }
 }
+
+export { DispositivoFactory };

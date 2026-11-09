@@ -16,19 +16,9 @@ class PedidoBuilder {
   constructor(nombre, dispositivo) {
     this.pedido = new Pedido(nombre, dispositivo);
   }
-  addCantidad(numCantidad) {
-    let cantidad = { numCantidad: numCantidad };
-    this.pedido.addExtra(cantidad);
-    return this;
-  }
-  addCantidad(numCantidad) {
-    let cantidad = { numCantidad: numCantidad };
-    this.pedido.addExtra(cantidad);
-    return this;
-  }
-  addCantidad(numCantidad) {
-    let cantidad = { numCantidad: numCantidad };
-    this.pedido.addExtra(cantidad);
+  introducirExtra(nombreExtra, extra) {
+    nombreExtra.push(extra);
+    this.pedido.extras.push(nombreExtra);
     return this;
   }
 
@@ -36,13 +26,4 @@ class PedidoBuilder {
     return this.pizza;
   }
 }
-//Pizza Builder siempre será un let, porque se modifica
-let pizzaBuilder = new PizzaBuilder();
-pizzaBuilder = pizzaBuilder.addCheese();
-pizzaBuilder = pizzaBuilder.addPepperoni();
-pizzaBuilder = pizzaBuilder.addAnchoas();
-pizzaBuilder = pizzaBuilder.setNombre("Pepperoni Pipsa");
-
-//El objeto final siempre será constante, es lo que ha decidido el usuario
-const pizza = pizzaBuilder.build();
-console.log(pizza);
+export { PedidoBuilder };
