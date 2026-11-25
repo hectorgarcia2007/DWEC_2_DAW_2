@@ -1,3 +1,13 @@
 button {
     position: absolute;
 }
+
+.boton {
+    position: absolute;
+}
+
+.imgKefir{
+    width: 5vw;
+    height: auto;
+    object-fit: fill;
+}

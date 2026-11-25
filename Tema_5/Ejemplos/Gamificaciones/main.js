@@ -24,7 +24,7 @@ function moverBtnRandom(btnMover) {
 
 function frickYou(event) {
   setTimeout(() => {
-    moverBtnRandom(btnGame);
+    moverBtnRandom(event.target);
   }, 200);
 }
 
@@ -47,4 +47,44 @@ function aumentarNumContador(contador, event) {
   }
 
   contador.textContent = numContador;
+}
+
+let arrayAllIntervalsKefirs = [];
+
+let velocidadMovimiento = 1000;
+setInterval(() => {
+  velocidadMovimiento = Math.abs(velocidadMovimiento - 200);
+  arrayAllIntervalsKefirs.forEach((element) => {
+    clearInterval(element);
+  });
+}, 1000);
+
+const numKefirDef = Math.round(Math.random() * 10);
+createKefir(numKefirDef);
+let contadorKefir = document.getElementById("numeroKefir");
+contadorKefir.textContent = numKefirDef;
+
+function createKefir(num) {
+  for (let index = 0; index < num; index++) {
+    let imgKefir = document.createElement("img");
+    imgKefir.classList.add("boton");
+    imgKefir.classList.add("imgKefir");
+    imgKefir.src = "kefir.png";
+    document.getElementsByTagName("main")[0].appendChild(imgKefir);
+    moverBtnRandom(imgKefir);
+    arrayAllIntervalsKefirs.push(
+      setInterval(() => {
+        moverBtnRandom(imgKefir);
+      }, velocidadMovimiento),
+    );
+    imgKefir.addEventListener("click", duplicateKefir);
+  }
+}
+
+function duplicateKefir(event) {
+  event.target.remove();
+  createKefir(2);
+
+  aumentarNumContador(contadorKefir, event);
+  aumentarNumContador(document.getElementById("numeroClicks"), event);
 }
